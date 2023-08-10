@@ -1,0 +1,47 @@
+<div class="col-md-12">
+  <h2>Students</h2>
+  <hr />
+  <!-- Add New Student button -->
+  <div class="col-md-12 text-center">
+    <a href="/students/add" class="btn btn-success float-right">Add New Student</a>
+  </div>
+  <div class="table-responsive">
+    <table class="table">
+      <thead>
+        <tr>
+          <th>Student Num</th>
+          <th>Full Name</th>
+          <th>Email</th>
+          <th>Address</th>
+          <th>Status</th>
+          <th>Course ID</th>
+          <th>Actions</th> <!-- New column for actions -->
+        </tr>
+      </thead>
+      <tbody>
+        {{#each students}}
+        <tr>
+          <td>{{studentNum}}</td>
+           <td><a href="/student/{{studentNum}}">{{firstName}} {{lastName}}</a></td>
+          <td><a href="mailto:{{email}}">{{email}}</a></td>
+          <td>{{addressStreet}}, {{addressCity}}, {{addressProvince}}</td>
+          <td>{{status}}</td>
+          <td><a href="/students?course={{course}}">{{course}}</a></td>
+          <td>
+            <!-- "Remove" button with link to delete student -->
+            <a href="/student/delete/{{studentNum}}" class="btn btn-danger">Remove</a>
+          </td>
+        </tr>
+        {{/each}}
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<!-- Add the following code to display the message when there are no students -->
+<div class="col-md-12 text-center">
+  {{#unless students}}
+  <strong>{{message}}</strong>
+  {{/unless}}
+</div>
+
