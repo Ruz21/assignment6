@@ -1,5 +1,5 @@
 const Sequelize = require('sequelize');
-const sequelize = new Sequelize('anzedvjr', 'anzedvjr', 'GrqA00obA3fdl_s9XGpCmgUl7InS3mYG', {
+const sequelize = new Sequelize('atmdafcs', 'atmdafcs', 'dh6Aa20SiFCOQheYKPgJLbk61ApT1lNl', {
   host: 'drona.db.elephantsql.com',
   dialect: 'postgres',
   port: 5432,
